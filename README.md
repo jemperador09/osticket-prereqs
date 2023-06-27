@@ -31,10 +31,12 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   
 - Go into <b>Control Panel</b> and click <b>Programs</b>
   - Click "Turn Windows features on or off"
-  - Under <b>World Wide Web Services</b> make sure to check the boxes shown below:
+  - Check the box for <b>Internet Information Services</b> and expand <b>World Wide Web Services</b>
+    - Under <b>Application Development Features</b> check the box for <b>CGI</b>
+    - Under <b>Common HTTP Features</b> make sure all boxes are checked
 </p>
 <p>
-<img src="https://i.imgur.com/g4H6M9R.png" height="20%" width="20%"  alt="Disk Sanitization Steps"/><img src="https://i.imgur.com/wknP9jl.png" height="20%" width="20%"  alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/hYzZNtw.png" height="20%" width="20%"  alt="Disk Sanitization Steps"/><img src="https://i.imgur.com/wknP9jl.png" height="20%" width="20%"  alt="Disk Sanitization Steps"/>
 </p>
 <p>
   
@@ -75,6 +77,8 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   - Launch Configuration Wizard (after install)
   - Choose <b>Standard</b> configuration
   - Create a password
+  - Click <b>Execute</b> to finish installation
+<img src="https://i.imgur.com/vBzEZCS.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 
 <p>
@@ -98,7 +102,51 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   
   - Reload IIS (Open IIS, Stop and Start the server)
 </p>
+<p>
+<b>9) Install <a href="https://drive.google.com/file/d/1VeVXKlzHDRjeaVUL99ptq7qYbrbXdFxJ/view?usp=drive_link">osTicket v1.15.8</a></b>
 
+  - Once downloaded, extract and copy "upload" into folder <b>C:\inetpub\wwwroot</b>
+<img src="https://i.imgur.com/yMXjLAH.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+  
+  - Rename "uploud" to "osTicket"
+<img src="https://i.imgur.com/PYWHvlm.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+  
+  - Reload IIS (Open IIS, Stop and Start the server)
+  - In IIS, go to <b>Sites</b> -> <b>Default</b> -> <b>osTicket</b>
+    - On the right, click on <b>Browse *:80 (http)</b>
+<img src="https://i.imgur.com/SS9vZ3z.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+
+- Progress on osTicket installer should pop up in a browser
+      
+<img src="https://i.imgur.com/RZk9qYi.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
+</p>
+
+<p>
+<b>10) Enable some extensions in IIS</b>
+
+  - Go back to IIS, go to <b>Sites</b> -> <b>Default</b> -> <b>osTicket</b>
+  - Double-click PHP Manager
+  - Click "Enable or disable an extenstion"
+    - Enable: php_imap.dll
+    - Enable: php_intl.dll
+    - Enable: php_opcache.dll
+
+<img src="https://i.imgur.com/Dgs5TLr.png" height="20%" width="20%" alt="Disk Sanitization Steps"/><img src="https://i.imgur.com/TZIpVEY.png" height="20%" width="20%" alt="Disk Sanitization Steps"/>
+  - Refresh the osTicket site in your browser, observe the changes
+  - Rename: <b>ost-config.php</b>
+    - From: C:\inetpub\wwwroot\osTicket\include\ <b>ost-sampleconfig</b>.php
+    - To: C:\inetpub\wwwroot\osTicket\include\ <b>ost-config</b>.php
+<img src="https://i.imgur.com/KdaxR7G.png" height="45%" width="45%" alt="Disk Sanitization Steps"/>
+
+  - <b>Assign Permissions for ost-config.php</b>
+    - Right click ost-config.php -> Properties -> Security -> Advanced
+      - Click <b>Disable inheritance</b> -> Remove all
+      - For new permissions, click Add -> Select Principal
+          - Enter in "Everyone", click OK, check box for "Full Control"
+<img src="https://i.imgur.com/SczfIDR.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
+</p>
 
 <br />
 
@@ -110,11 +158,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<br />
 
