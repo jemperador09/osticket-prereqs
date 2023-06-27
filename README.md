@@ -148,6 +148,12 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <img src="https://i.imgur.com/SczfIDR.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
 </p>
 
+<p>
+<b>11) Continue Setting up osTicket in the browser (click Continue)</b>
+  
+  - Name Help Desk
+  - Default email (receives email from customers)
+</p>
 <br />
 
 <p>
