@@ -23,6 +23,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - Install Rewrite Module
 - Install Microsoft Visual C++ Redistributable
 - Install MySQL 5.5.62
+- Install osTicket v1.15.8
 
 <h2>Installation Steps</h2>
 
@@ -76,7 +77,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   - Choose <b>Typical</b> setup
   - Launch Configuration Wizard (after install)
   - Choose <b>Standard</b> configuration
-  - Create a password
+  - Create a password (default username given is <b>root</b>)
   - Click <b>Execute</b> to finish installation
 <img src="https://i.imgur.com/vBzEZCS.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
@@ -154,14 +155,39 @@ This tutorial outlines the prerequisites and installation of the open-source hel
   - Name Help Desk
   - Default email (receives email from customers)
 </p>
-<br />
 
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<b>12) Before continuing, download and install <a href="https://www.heidisql.com/installers/HeidiSQL_12.3.0.6589_Setup.exe">HeidiSQL</a></b>
+
+  - Open Heidi SQL
+  - Create a new session, Username: root / Password: (pw created from MySQL)
+  - Connect to session
+  - Create a database called "osTicket"
+
+<img src="https://i.imgur.com/2fZ1MJH.png" height="35%" width="35%" alt="Disk Sanitization Steps"/><img src="https://i.imgur.com/BU2UyZe.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-[<img src="https://i.imgur.com/DJmEXEB.png" height="50%" width="50%" alt="Disk Sanitization Steps"/>]
+<b>13) Continue setting up osTicket on browser</b>
+
+  - MySQL Database: osTicket
+  - MySQL Username: root
+  - MySQL Password: (pw created from MySQL)
+  - Click “Install Now!”
+
+<img src="https://i.imgur.com/kHckfES.png" height="35%" width="35%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<b>Congratulations, hopefully osTicket installed with no errors!</b>
+
+  - Browse to your help desk login page: http://localhost/osTicket/scp/login.php
+  - End Users osTicket URL: http://localhost/osTicket/
+<img src="https://i.imgur.com/XkxFcjf.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<b>*Clean up*</b>
+
+  - Delete: C:\inetpub\wwwroot\osTicket\setup (just the "setup" folder)
+  - Set Permissions to “Read” only: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+<img src="https://i.imgur.com/p4NNR2o.png" height="30%" width="30%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
-
-
